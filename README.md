@@ -13,9 +13,9 @@ Descripción: El participante aplicará sus conocimientos obtenidos en el curso 
   
   #La evidencia se dividirá en tres etapas:
   
-  •Avance 1: ambiente de desarrollo, diagrama de flujo.
-  •Avance 2: diseño del programa, diagrama de clases y pseudocódigo de la aplicación.
-  •Entrega final: documentación de uso.
+ ** •Avance 1: ambiente de desarrollo, diagrama de flujo.**
+ ** •Avance 2: diseño del programa, diagrama de clases y pseudocódigo de la aplicación.**
+**  •Entrega final: documentación de uso.**
   
   # Objetivo: 
   Que el estudiante aplique los conocimientos adquiridos durante la clase creando un programa en Javaquesimulará un sistema de administración de citas para un consultorio 
