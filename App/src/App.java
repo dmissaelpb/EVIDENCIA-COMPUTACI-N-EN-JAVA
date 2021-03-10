@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -12,8 +13,8 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Hello World!");
+    public void start(Stage stage) {
+        stage.setTitle("Hello World!");
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -26,7 +27,8 @@ public class App extends Application {
 
         StackPane root = new StackPane();
         root.getChildren().add(btn);
-        primaryStage.setScene(new Scene(root, 300, 250));
-        primaryStage.show();
+        stage.getIcons().add(new Image("https://img.icons8.com/officel/80/000000/pancake.png"));
+        stage.setScene(new Scene(root, 300, 250));
+        stage.show();
     }
 }
