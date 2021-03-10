@@ -14,14 +14,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Hello World!");
+        stage.setTitle("consultorio 1.0.1");
         Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.setText("inicio");
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                System.out.println("inicio");
             }
         });
 
