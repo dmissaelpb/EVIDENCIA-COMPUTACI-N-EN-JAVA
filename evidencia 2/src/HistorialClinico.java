@@ -1,68 +1,48 @@
-//package clinica;
-
 import javax.swing.JOptionPane;
-
 public final class HistorialClinico {
-
 	private String codigo;
 	private String fecha;
 	private String idPaciente;
 	private String idMedico;
-	private String observaciones;
-	
+	private String observaciones;	
 	public HistorialClinico(String codigo, String fecha, String idPaciente,
-			String idMedico, String observaciones) {
+		String idMedico, String observaciones) {
 		this.codigo = codigo;
 		this.fecha = fecha;
 		this.idPaciente = idPaciente;
 		this.idMedico = idMedico;
 		this.observaciones = observaciones;
 	}
-
 	public String getCodigo() {
-		return codigo;
-	}
-
+		return codigo;	}
 	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-
+		this.codigo = codigo;	}
 	public String getFecha() {
-		return fecha;
+		return fecha;	
 	}
-
 	public void setFecha(String fecha) {
-		this.fecha = fecha;
+		this.fecha = fecha;	
 	}
-
 	public String getIdPaciente() {
 		return idPaciente;
-	}
-
+		}
 	public void setIdPaciente(String idPaciente) {
-		this.idPaciente = idPaciente;
+		this.idPaciente = idPaciente;	
 	}
-
 	public String getIdMedico() {
-		return idMedico;
+		return idMedico;	
 	}
-
 	public void setIdMedico(String idMedico) {
-		this.idMedico = idMedico;
+		this.idMedico = idMedico;	
 	}
-
-	public String getObservaciones() {
-		return observaciones;
+	public String getObservaciones()
+	 {
+		return observaciones;	
 	}
-
 	public void setObservaciones(String observaciones) {
-		this.observaciones = observaciones;
-	}
-	
-	/**
-	 * Muestra por panel todos los datos del Historial Clinico
-	 */
+		this.observaciones = observaciones;	}
 	public void mostrar() {
+
 		String mensaje = "Codigo Historial: " + codigo + "\nFecha: " + fecha
 				+ "\nID Paciente: " + idPaciente + "\nID Medico: " + idMedico
 				+ "\nObservaciones:\n" + observaciones;

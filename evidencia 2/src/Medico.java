@@ -1,72 +1,63 @@
-
-
 import javax.swing.JOptionPane;
+import java.io.*;
 
 public final class Medico {
-	
+
 	private String id;
 	private String nombre;
 	private String apellidos;
 	private String especialidad;
-	
-	public Medico(String id, String nombre, String apellidos, String especialidad) {
+
+
+		public Medico(String id, String nombre, String apellidos, String especialidad) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.especialidad = especialidad;
+		this.especialidad = especialidad;	
 	}
+
 
 	public String getId() {
-		return id;
-	}
-
+		return id;	}
 	public void setId(String id) {
-		this.id = id;
-	}
+		this.id = id;	}
 
+		
 	public String getNombre() {
-		return nombre;
-	}
-
+		return nombre;	}
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
+		this.nombre = nombre;	}
 	public String getApellidos() {
-		return apellidos;
-	}
-
+		return apellidos;	}
 	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
-
+		this.apellidos = apellidos;	}
 	public String getEspecialidad() {
-		return especialidad;
-	}
 
+			return especialidad;
+			}
 	public void setEspecialidad(String especialidad) {
 		this.especialidad = especialidad;
-	}
-	
-	/**
-	 * Muestra por panel todos los datos del Medico
-	 */
+		}	
+
+
 	public void mostrar() {
+
 		String mensaje = "ID Medico: " + id + "\nNombre: " + nombre
 				+ "\nApellidos: " + apellidos + "\nEspecialidad: " + especialidad;
 		JOptionPane.showMessageDialog(null, mensaje, "Mostrar Medico", JOptionPane.INFORMATION_MESSAGE);
 	}
 
-	public Medico remove(int i) {
-		return null;
-	}
 
+
+	public Medico remove(int i) {	
+		return null;
+		}
 	public Medico get(int i) {
 		return null;
-	}
-
+		}
     public int size() {
-        return 0;
-    }
+        return 0;  
+	  }
 
+	  
 }

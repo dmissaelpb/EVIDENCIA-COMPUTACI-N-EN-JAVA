@@ -1,9 +1,11 @@
 import java.util.ArrayList;
-
+import java.io.*;
 import javax.swing.JOptionPane;
 
 public class GestorMedico {
 
+
+	File archivoDoc;
 
     private ArrayList<Medico> medicos;
     
@@ -16,15 +18,80 @@ public class GestorMedico {
 		String nombre = JOptionPane.showInputDialog(null, "Nombre:", "Nuevo medico", JOptionPane.QUESTION_MESSAGE);
 		String apellidos = JOptionPane.showInputDialog(null, "Apellidos:", "Nuevo medico", JOptionPane.QUESTION_MESSAGE);
 		String especialidad = JOptionPane.showInputDialog(null, "especialidad:", "Nuevo medico", JOptionPane.QUESTION_MESSAGE);
+
 		
 		Medico nuevoMedico = new Medico(id, nombre, apellidos, especialidad);
+		
+		try(FileWriter medicosW = new FileWriter(archivoDoc, true);){
+			
+			medicosW.write(id + "."  + nombre + "." + apellidos + "." + especialidad + "\r\n");
+			//  escritura.close();
+		}catch(IOException e){
+			
+			System.out.println(e);
+		}
+		
 		return medicos.add(nuevoMedico);//Devuelve TRUE si se insertó correctamente, FALSE si no se pudo insertar
+	
+	}
+	public void crearArchivosDoc(){
+		try {
+            archivoDoc = new File("DocBook.txt");
+            if (archivoDoc.createNewFile()) {
+                JOptionPane.showMessageDialog(null,"DocBook Archivo Creado ");
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
 	}
 
+    public void mostrarMedico() throws IOException {
+		cargarArchivoDoc();
 
-    public void mostrarMedico() {
-		for (Medico m: medicos)
-			m.mostrar();
+		/*for (Medico m: medicos)
+			m.mostrar();*/
+	}
+
+	public  void cargarArchivoDoc() throws IOException{
+
+		
+		try (BufferedReader lecturaDoc = new BufferedReader(new FileReader("DocBook.txt"))){
+	
+		String linea ;
+
+	//	String id = linea.split(".")[1];
+	//	String id = "";
+		String nombre = "";
+		String apellidos = "";
+		String especialidad = "";
+	//	String  linea.split("&")[];
+			
+		while((linea = lecturaDoc.readLine()) != null){
+
+	
+			//int i = 0;
+
+			// linea.split("&") = linea.split("&");
+			String id  = linea.split("&")[0];
+			
+
+			JOptionPane.showMessageDialog(null,linea );
+			
+			//Medico nuevoMedico = new Medico(id, nombre, apellidos, especialidad);
+			
+			System.out.println(linea);
+			
+		}
+		
+		//String   id           = linea.split(".")[1];
+	
+		
+		
+		
+	}catch(FileNotFoundException e){
+		System.out.println(e);
+	}
+
 	}
 
 
@@ -55,8 +122,8 @@ public class GestorMedico {
 				+ "\nIntroduzca nuevo nombre:", "Modificar Medico", JOptionPane.QUESTION_MESSAGE));
 			medico.setApellidos(JOptionPane.showInputDialog(null, "Apellidos actuales: " + medico.getApellidos()
 				+ "\nIntroduzca nuevos apellidos:", "Modificar Medico", JOptionPane.QUESTION_MESSAGE));
-			medico.setEspecialidad(JOptionPane.showInputDialog(null, "Genero actual: " + medico.getEspecialidad()
-				+ "\nIntroduzca nuevo genero:", "Modificar Medico", JOptionPane.QUESTION_MESSAGE));
+			medico.setEspecialidad(JOptionPane.showInputDialog(null, "especialidad actual: " + medico.getEspecialidad()
+				+ "\nIntroduzca nuevo especialidad:", "Modificar Medico", JOptionPane.QUESTION_MESSAGE));
 			
 			return true;
 		}
@@ -85,5 +152,8 @@ public class GestorMedico {
 		}
 		
 	}
+
+	
+	
 
 }

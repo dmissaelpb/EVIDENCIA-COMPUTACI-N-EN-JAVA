@@ -1,10 +1,12 @@
 
-
 import java.util.ArrayList;
-
+import java.io.*;
 import javax.swing.JOptionPane;
 
 public final class GestorPacientes {
+
+	File archivoPac;
+
 	
 	private ArrayList<Paciente> pacientes;
 	
@@ -26,32 +28,78 @@ public final class GestorPacientes {
 			JOptionPane.showMessageDialog(null, "Solo se admite introducir numeros para la edad\nNo se ha registrado el valor introducido",
 					"Error", JOptionPane.WARNING_MESSAGE);
 		}
+
 		Paciente nuevoPaciente = new Paciente(id, nombre, apellidos, edad, genero);
+
+		try(FileWriter pacientesW = new FileWriter(archivoPac, true);){
+			
+			pacientesW.write(id + "."  + nombre + "." + apellidos + "." + genero + "." + genero + "\r\n");
+			//  escritura.close();
+		}catch(IOException e){
+			
+			System.out.println(e);
+		}
+
+
 		return pacientes.add(nuevoPaciente);//Devuelve TRUE si se insertó correctamente, FALSE si no se pudo insertar
 	}
-	
+	public void crearArchivosPac(){
+		try {
+            archivoPac = new File("PacBook.txt");
+            if (archivoPac.createNewFile()) {
+                JOptionPane.showMessageDialog(null,"PacBook Archivo Creado ");
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+	}
 	/**
 	 * Lista por pantalla los datos de todos los pacientes registrados.
 	 */
-	public void mostrarPacientes() {
-		for (Paciente p: pacientes)
-			p.mostrar();
+	public void mostrarPacientes()throws IOException {
+
+		cargarArchivoPac();
+
+
+		/*for (Paciente p: pacientes)
+			p.mostrar();*/
+	}
+
+	public  void cargarArchivoPac() throws IOException{
+
+		
+		try (BufferedReader lecturaPac = new BufferedReader(new FileReader("PacBook.txt"))){
+	
+		String linea ;
+			
+		while((linea = lecturaPac.readLine()) != null){
+
+			String id  = linea.split("&")[0];
+			
+
+			JOptionPane.showMessageDialog(null,linea );
+			
+			System.out.println(linea);
+			
+		}
+		
+		
+	}catch(FileNotFoundException e){
+		System.out.println(e);
+	}
+
 	}
 	
-	/**
-	 * Modifica el Paciente que el usuario solicite mediante el ID de Paciente.
-	 * @return True al finalizar la modificacion correctamente.
-	 * False si no se encontró ningun paciente con el ID indicado.
-	 */
+
+
+
+
+
 	public boolean modificarPaciente() {
+
 		String id = JOptionPane.showInputDialog(null, "Introduzca Identificador del paciente a modificar:",
 				"Modificar Paciente", JOptionPane.QUESTION_MESSAGE);
-		/*
-		 * Ahora buscaremos el paciente en el ArrayList y si lo encontramos lo referenciaremos
-		 * a otro objeto de la clase Paciente que incialmente tiene valor null.
-		 * Si tras finalizar la búsqueda, este objeto sigue valiendo null significa que no hemos
-		 * encontrado el Paciente que nos han pedido e informaremos al usuario.
-		 */
+		
 		Paciente paciente = null;
 		for (int i = 0; i < pacientes.size(); i++){
 			if (pacientes.get(i).getId().equals(id)) {
@@ -87,6 +135,7 @@ public final class GestorPacientes {
 		}
 	}
 	
+
 	/**
 	 * Elimina el Paciente indicado por el usuario mediante el ID del Paciente.
 	 * @return True si tuvo éxito la eliminacion.
