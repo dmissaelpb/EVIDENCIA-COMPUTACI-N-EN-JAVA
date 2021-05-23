@@ -1,0 +1,38 @@
+Electro Falcon SECURITY ESSENTIALS
+
+Los presentes términos de licencia son un contrato entre Electro Falcon Corporation (o, en función del país donde residas, una de sus filiales) y tú.
+ Sírvete leerlos detenidamente. Son de aplicación al software mencionado anteriormente, el cual incluye los soportes físicos en los que lo hayas
+ recibido, en su caso. Los términos también se aplicarán a cualquier
+
+	versión posterior del software (incluidas las actualizaciones o los complementos),
+	actualización,
+	complemento,
+	servicio basado en Internet y
+	servicio de soporte técnico de Electro Falcon
+
+correspondientes a este software, a menos que existan otros términos aplicables a dichos elementos. En tal caso, se aplicarán dichos términos.
+
+Al hacer uso del software, estarás aceptando estos términos. Si no los aceptas, no utilices el software.
+
+Tal y como se describe a continuación, la instalación o la utilización por tu parte del software también constituirá tu 
+consentimiento para la transmisión de determinada información estándar del equipo durante la validación, la descarga e instalación
+ automáticas de determinadas actualizaciones, y para los servicios basados en Internet.
+
+Si cumples con estos términos de licencia, dispondrás de los siguientes derechos.
+1. DERECHOS DE INSTALACIÓN Y DE USO.
+
+	Uso doméstico. Si eres un usuario doméstico, puedes instalar y usar cualquier número de copias 
+del software en tus dispositivos personales para que lo utilicen las personas que residen en tu hogar.
+
+	Pequeña empresa. Si administras una pequeña empresa, puedes instalar y utilizar el software en 
+un máximo de diez (10) dispositivos de la empresa.
+
+	Restricciones. El software no puede utilizarse en dispositivos que pertenezcan a 
+instituciones gubernamentales o académicas.
+
+	Separación de los componentes. La licencia se aplica a los componentes del software
+
+ como una sola unidad. No puedes separar los componentes e instalarlos en diferentes dispositivos.
+
+	Programas de Electro Falcon incluidos. El software puede incluir otros programas de 
+Electro Falcon. El uso de dichos programas está sujeto a los términos de licencia vinculados con ellos.
